@@ -1,0 +1,29 @@
+{
+  "name": "postcss-logical-properties",
+  "version": "0.0.0",
+  "description": "Transform start/end properties to left/right depending on LTR or RTL writing directions of the document",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js | tap-spec"
+  },
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-plugin"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "tap-spec": "^2.2.2",
+    "tape": "^3.5.0"
+  },
+  "homepage": "https://github.com/ahmadalfy/postcss-logical-properties",
+  "author": {
+    "name": "Ahmad Alfy",
+    "email": "ahmadalfy@gmail.com",
+    "url": "https://github.com/ahmadalfy/logical-properties"
+  },
+  "repository": "ahmadalfy/postcss-logical-properties",
+  "dependencies": {
+    "postcss": "^4.1.11"
+  }
+}
