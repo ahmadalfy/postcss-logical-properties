@@ -1,6 +1,6 @@
 {
   "name": "postcss-logical-properties",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Transform start/end properties to left/right depending on LTR or RTL writing directions of the document",
   "main": "index.js",
   "keywords": [

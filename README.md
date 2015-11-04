@@ -1,6 +1,14 @@
-# [postcss][postcss]-logical-properties [![NPM version](https://badge.fury.io/js/postcss-logical-properties.svg)][npm] [![Dependency Status](https://gemnasium.com/ahmadalfy/postcss-logical-properties.svg)][deps]
+# [postcss][postcss]-logical-properties [![Build Status](https://travis-ci.org/ahmadalfy/postcss-logical-properties.svg?branch=master)][ci] [![NPM version](https://badge.fury.io/js/postcss-logical-properties.svg)][npm] [![Dependency Status](https://gemnasium.com/ahmadalfy/postcss-logical-properties.svg)][deps]
 
-> Transform start/end properties to left/right depending on LTR or RTL writing directions of the document. Currently only supporting `inline-start` and `inline-end`. More information about logical properties can be on the [CSS Working Group Logical Porprties Draft][csswg]
+> Transform start/end properties to left/right depending on LTR or RTL writing directions of the document. Currently supporting:
+
+```
+float: inline-start || inline-end
+clear: inline-start || inline-end
+text-align: start || end
+```
+
+More information about logical properties can be on the [CSS Working Group Logical Porprties Draft][csswg]
 
 ## Install
 

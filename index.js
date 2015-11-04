@@ -2,8 +2,9 @@
 
 var postcss = require('postcss');
 
-var BASE_DIRECTION    = 'ltr';
-var logicalProperties = ['inline-start', 'inline-end'];
+var BASE_DIRECTION  = 'ltr';
+var whitelistProps  = /^(float|clear|text-align)/;
+var logicalValues   = ['inline-start', 'inline-end', 'start', 'end'];
 
 module.exports = postcss.plugin('postcss-logical-properties', function (opts) {
 
@@ -34,22 +35,30 @@ module.exports = postcss.plugin('postcss-logical-properties', function (opts) {
       rule.each(function (decl, i) {
         if (decl.type !== 'decl') { return; }
         var value = decl.value;
-        if (logicalProperties.indexOf(value) !== -1) {
+        var prop = decl.prop;
+        if(!whitelistProps.test(prop)) {
+          return;
+        }
+        if (logicalValues.indexOf(value) !== -1) {
           if (options.rootDir === 'ltr') {
             switch(value) {
               case 'inline-start':
+              case 'start':
                 value = 'left';
                 break;
               case 'inline-end':
+              case 'end':
                 value = 'right';
                 break;
             }
           } else if (options.rootDir === 'rtl') {
             switch(value) {
               case 'inline-start':
+              case 'start':
                 value = 'right';
                 break;
               case 'inline-end':
+              case 'end':
                 value = 'left';
                 break;
             }
