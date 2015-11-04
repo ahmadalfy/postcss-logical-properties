@@ -1,13 +1,13 @@
 # [postcss][postcss]-logical-properties [![Build Status](https://travis-ci.org/ahmadalfy/postcss-logical-properties.svg?branch=master)][ci] [![NPM version](https://badge.fury.io/js/postcss-logical-properties.svg)][npm] [![Dependency Status](https://gemnasium.com/ahmadalfy/postcss-logical-properties.svg)][deps]
 
-> Transform start/end properties to left/right depending on LTR or RTL writing directions of the document
+> Transform start/end properties to left/right depending on LTR or RTL writing directions of the document. Currently only supporting `inline-start` and `inline-end`. More information about logical properties can be on the [CSS Working Group Logical Porprties Draft][csswg]
 
 ## Install
 
 With [npm](https://npmjs.org/package/postcss-logical-properties) do:
 
 ```
-npm install postcss-logical-properties --save
+npm install postcss-logical-properties --save-dev
 ```
 
 ## Example
@@ -15,41 +15,55 @@ npm install postcss-logical-properties --save
 ### Input
 
 ```css
-h1 {
-    color: red;
+element {
+  float: inline-start;
 }
 ```
 
 ### Output
 
 ```css
-h1{color:red}
-```
-
-## API
-
-### logicalProperties([options])
-
-#### options
-
-##### foo
-
-Type: `boolean`
-Default: `true`
-
-Description of what it does. An example:
-
-```js
-var css = 'h1 { color: red }';
-console.log(postcss([ require('postcss-logical-properties')({foo: true}) ]).process(css).css);
-
-// => 'h1{color:red}'
+element {
+  float: left; /* In case the direction of the document is rtl */
+  float: inline-start;
+}
 ```
 
 ## Usage
 
-See the [PostCSS documentation](https://github.com/postcss/postcss#usage) for
-examples for your environment.
+### Use with grunt-postcss
+
+```js
+grunt.initConfig({
+  postcss: {
+    options: {
+      ...
+      processors: [
+        require('postcss-logical-properties')()\
+      ]
+    }
+  }
+});
+```
+
+## Options
+
+Type: `Object | Null`
+Default: `{rootDir: 'ltr', replace: false, html: true}`
+
+- `rootDir`       the root element direction. Can be `ltr` or `rtl`. PostCSS-logical-properties also tries to get the root direction from CSS (`html` or `:root`) and overrides this option. Use `html` option to disable this behaviour.
+- `replace`       replaces rules containing the logical properties instead of adding fallbacks.
+- `html`          overrides root direction from CSS `html {}` or `:root {}`
+
+## Roadmap
+
+- Add support for logical directional values: `block-start` and `block-end`.
+- Add support for logical values for the `text-align` Property (`start` and `end`).
+- Add support for logical margins and offsets: the `margin-` and `offset-` (`block-start`, `block-end`, `inline-start` and `inline-end` properties).
+- Add support for logical padding and border: the `padding-` and `border-*-` (`block-start`, `block-end`, `inline-start` and `inline-end` properties).
+- Add support for shorthand properties with logical Keyword (`padding`, `margin`).
+- Add option to create fallbacks for the opposite direction of the document.
+- Write tests
 
 ## Contributing
 
@@ -64,3 +78,4 @@ MIT © [Ahmad Alfy](https://github.com/ahmadalfy/logical-properties)
 [deps]:    https://gemnasium.com/ahmadalfy/postcss-logical-properties
 [npm]:     http://badge.fury.io/js/postcss-logical-properties
 [postcss]: https://github.com/postcss/postcss
+[csswg]:   https://drafts.csswg.org/css-logical-props/
