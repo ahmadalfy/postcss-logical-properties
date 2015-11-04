@@ -39,7 +39,7 @@ grunt.initConfig({
     options: {
       ...
       processors: [
-        require('postcss-logical-properties')()\
+        require('postcss-logical-properties')()
       ]
     }
   }
