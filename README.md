@@ -1,4 +1,4 @@
-# [postcss][postcss]-logical-properties [![Build Status](https://travis-ci.org/ahmadalfy/postcss-logical-properties.svg?branch=master)][ci] [![NPM version](https://badge.fury.io/js/postcss-logical-properties.svg)][npm] [![Dependency Status](https://gemnasium.com/ahmadalfy/postcss-logical-properties.svg)][deps]
+# [postcss][postcss]-logical-properties [![Build Status](https://travis-ci.org/ahmadalfy/logical-properties.svg?branch=master)][ci] [![NPM version](https://badge.fury.io/js/postcss-logical-properties.svg)][npm] [![Dependency Status](https://gemnasium.com/ahmadalfy/postcss-logical-properties.svg)][deps]
 
 > Transform start/end properties to left/right depending on LTR or RTL writing directions of the document. Currently supporting:
 
@@ -66,7 +66,7 @@ Default: `{rootDir: 'ltr', replace: false, html: true}`
 ## Roadmap
 
 - Add support for logical directional values: `block-start` and `block-end`.
-- Add support for logical values for the `text-align` Property (`start` and `end`).
+- ~~ for logical values for the `text-align` Property (`start` and `end`).~~
 - Add support for logical margins and offsets: the `margin-` and `offset-` (`block-start`, `block-end`, `inline-start` and `inline-end` properties).
 - Add support for logical padding and border: the `padding-` and `border-*-` (`block-start`, `block-end`, `inline-start` and `inline-end` properties).
 - Add support for shorthand properties with logical Keyword (`padding`, `margin`).
