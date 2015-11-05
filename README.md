@@ -32,7 +32,7 @@ element {
 
 ```css
 element {
-  float: left; /* In case the direction of the document is rtl */
+  float: left; /* In case the direction of the document is ltr */
   float: inline-start;
 }
 ```
