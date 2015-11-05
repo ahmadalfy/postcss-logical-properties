@@ -66,7 +66,7 @@ Default: `{rootDir: 'ltr', replace: false, html: true}`
 ## Roadmap
 
 - Add support for logical directional values: `block-start` and `block-end`.
-- ~~ for logical values for the `text-align` Property (`start` and `end`).~~
+- ~~Add support for logical values of the `text-align` property (`start` and `end`).~~
 - Add support for logical margins and offsets: the `margin-` and `offset-` (`block-start`, `block-end`, `inline-start` and `inline-end` properties).
 - Add support for logical padding and border: the `padding-` and `border-*-` (`block-start`, `block-end`, `inline-start` and `inline-end` properties).
 - Add support for shorthand properties with logical Keyword (`padding`, `margin`).
